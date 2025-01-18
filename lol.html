@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Wonderland</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        header {
+            background: url('https://cdn.mos.cms.futurecdn.net/faW95ok86W7MUhwJFTJkx9-1200-80.jpg.webp') no-repeat center center/cover;
+            height: 300px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        header .language-buttons {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        header .language-buttons button {
+            background: white;
+            color: #333;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        header .language-buttons button:hover {
+            background: #333;
+            color: white;
+        }
+        section {
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 48%;
+            border: 5px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        const translations = {
+            en: {
+                title: "Welcome to Wonderland",
+                subtitle: "Your gateway to a world of magic and adventure",
+                sectionTitle: "Discover the Magic of Wonderland",
+                paragraph1: "Wonderland is a place like no other, offering a perfect blend of natural beauty, historic charm, and cultural richness. From the golden sands of Sunset Beach to the majestic peaks of Mountain Haven, every corner of Wonderland promises a unique and unforgettable experience.",
+                paragraph2: "Immerse yourself in the tranquil atmosphere of Sunset Beach, where the gentle sound of waves and the breathtaking view of the setting sun create a haven of peace. For those who crave the thrill of exploration, the trails of Mountain Haven lead to awe-inspiring vistas.",
+                copyright: "© 2025 Explore Wonderland. All rights reserved."
+            },
+            fa: {
+                title: "به واندرلند خوش آمدید",
+                subtitle: "دروازه شما به دنیایی از جادو و ماجراجویی",
+                sectionTitle: "جادوی واندرلند را کشف کنید",
+                paragraph1: "واندرلند مکانی منحصر به فرد است که ترکیبی از زیبایی طبیعی، جذابیت تاریخی و غنای فرهنگی را ارائه می‌دهد. از شن‌های طلایی ساحل سان‌ست گرفته تا قله‌های باشکوه مونتین هیون، هر گوشه از واندرلند تجربه‌ای فراموش‌نشدنی را وعده می‌دهد.",
+                paragraph2: "در فضای آرام‌بخش ساحل سان‌ست غرق شوید، جایی که صدای آرام امواج و منظره نفس‌گیر غروب خورشید آرامشی بی‌نظیر ایجاد می‌کند. برای کسانی که به دنبال هیجان کاوش هستند، مسیرهای مونتین هیون به چشم‌اندازهای شگفت‌انگیز منتهی می‌شوند.",
+                copyright: "© 2025 اکسپلور واندرلند. کلیه حقوق محفوظ است."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById("title").textContent = translations[lang].title;
+            document.getElementById("subtitle").textContent = translations[lang].subtitle;
+            document.getElementById("sectionTitle").textContent = translations[lang].sectionTitle;
+            document.getElementById("paragraph1").textContent = translations[lang].paragraph1;
+            document.getElementById("paragraph2").textContent = translations[lang].paragraph2;
+            document.getElementById("copyright").textContent = translations[lang].copyright;
+
+            if (lang === 'fa') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Welcome to Wonderland</h1>
+        <p id="subtitle">Your gateway to a world of magic and adventure</p>
+        <div class="language-buttons">
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('fa')">FA</button>
+        </div>
+    </header>
+    <section>
+        <h2 id="sectionTitle">Discover the Magic of Wonderland</h2>
+        <p id="paragraph1">Wonderland is a place like no other, offering a perfect blend of natural beauty, historic charm, and cultural richness. From the golden sands of Sunset Beach to the majestic peaks of Mountain Haven, every corner of Wonderland promises a unique and unforgettable experience.</p>
+        <div class="image-container">
+            <img src="https://cdn.mos.cms.futurecdn.net/faW95ok86W7MUhwJFTJkx9-1200-80.jpg.webp" alt="Sunset Beach">
+            <img src="https://cdn.mos.cms.futurecdn.net/faW95ok86W7MUhwJFTJkx9-1200-80.jpg.webp" alt="Mountain Haven">
+        </div>
+        <p id="paragraph2">Immerse yourself in the tranquil atmosphere of Sunset Beach, where the gentle sound of waves and the breathtaking view of the setting sun create a haven of peace. For those who crave the thrill of exploration, the trails of Mountain Haven lead to awe-inspiring vistas.</p>
+    </section>
+    <footer>
+        <p id="copyright">© 2025 Explore Wonderland. All rights reserved.</p>
+    </footer>
+</body>
+</html>
