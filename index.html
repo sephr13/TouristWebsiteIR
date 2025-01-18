@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Wonderland</title>
+    <title>Explore Iran</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,15 +12,12 @@
             line-height: 1.6;
             color: #333;
             padding: 20px;
-        }
-        body.rtl {
-            direction: rtl;
-            text-align: right;
+            background-color: #f4f4f4;
         }
         header {
-            background: url('https://cdn.mos.cms.futurecdn.net/faW95ok86W7MUhwJFTJkx9-1200-80.jpg.webp') no-repeat center center/cover;
+            background: url('https://webunwto.s3.eu-west-1.amazonaws.com/s3fs-public/2024-02/un-tourism-celebrates-heritage-and-culture-on-official-visit-to-iran.jpg') no-repeat center center/cover;
             height: 300px;
-            color: white;
+            color: black;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -29,120 +26,141 @@
             position: relative;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
+            color: black;
         }
         header p {
             font-size: 1.2em;
             margin: 10px 0;
         }
-        header .language-buttons {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-        header .language-buttons button {
-            background: white;
-            color: #333;
-            border: 1px solid #333;
-            padding: 5px 10px;
-            margin-left: 10px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        header .language-buttons button:hover {
-            background: #333;
-            color: white;
-        }
         section {
-            max-width: 800px;
-            margin: auto;
-        }
-        h2 {
-            font-size: 2em;
-            margin-top: 20px;
-        }
-        p {
-            margin: 10px 0;
-            font-size: 1.1em;
-            text-align: justify;
-        }
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px 0;
-        }
-        .image-container img {
-            max-width: 48%;
-            border: 5px solid #ddd;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1.1em;
+            text-align: justify;
+            line-height: 1.8;
+            color: #555;
         }
         footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 10px 0;
-            margin-top: 20px;
+            margin-top: 30px;
+        }
+        .section-title {
+            font-size: 2em;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e64a19;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            margin: 30px 0;
+        }
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
         }
     </style>
-    <script>
-        const translations = {
-            en: {
-                title: "Welcome to Wonderland",
-                subtitle: "Your gateway to a world of magic and adventure",
-                sectionTitle: "Discover the Magic of Wonderland",
-                paragraph1: "Wonderland is a place like no other, offering a perfect blend of natural beauty, historic charm, and cultural richness. From the golden sands of Sunset Beach to the majestic peaks of Mountain Haven, every corner of Wonderland promises a unique and unforgettable experience.",
-                paragraph2: "Immerse yourself in the tranquil atmosphere of Sunset Beach, where the gentle sound of waves and the breathtaking view of the setting sun create a haven of peace. For those who crave the thrill of exploration, the trails of Mountain Haven lead to awe-inspiring vistas.",
-                copyright: "© 2025 Explore Wonderland. All rights reserved."
-            },
-            fa: {
-                title: "به واندرلند خوش آمدید",
-                subtitle: "دروازه شما به دنیایی از جادو و ماجراجویی",
-                sectionTitle: "جادوی واندرلند را کشف کنید",
-                paragraph1: "واندرلند مکانی منحصر به فرد است که ترکیبی از زیبایی طبیعی، جذابیت تاریخی و غنای فرهنگی را ارائه می‌دهد. از شن‌های طلایی ساحل سان‌ست گرفته تا قله‌های باشکوه مونتین هیون، هر گوشه از واندرلند تجربه‌ای فراموش‌نشدنی را وعده می‌دهد.",
-                paragraph2: "در فضای آرام‌بخش ساحل سان‌ست غرق شوید، جایی که صدای آرام امواج و منظره نفس‌گیر غروب خورشید آرامشی بی‌نظیر ایجاد می‌کند. برای کسانی که به دنبال هیجان کاوش هستند، مسیرهای مونتین هیون به چشم‌اندازهای شگفت‌انگیز منتهی می‌شوند.",
-                copyright: "© 2025 اکسپلور واندرلند. کلیه حقوق محفوظ است."
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.getElementById("title").textContent = translations[lang].title;
-            document.getElementById("subtitle").textContent = translations[lang].subtitle;
-            document.getElementById("sectionTitle").textContent = translations[lang].sectionTitle;
-            document.getElementById("paragraph1").textContent = translations[lang].paragraph1;
-            document.getElementById("paragraph2").textContent = translations[lang].paragraph2;
-            document.getElementById("copyright").textContent = translations[lang].copyright;
-
-            if (lang === 'fa') {
-                document.body.classList.add('rtl');
-            } else {
-                document.body.classList.remove('rtl');
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
-        <h1 id="title">Welcome to Wonderland</h1>
-        <p id="subtitle">Your gateway to a world of magic and adventure</p>
-        <div class="language-buttons">
-            <button onclick="changeLanguage('en')">EN</button>
-            <button onclick="changeLanguage('fa')">FA</button>
-        </div>
+        <h1>Explore Iran</h1>
     </header>
+
     <section>
-        <h2 id="sectionTitle">Discover the Magic of Wonderland</h2>
-        <p id="paragraph1">Wonderland is a place like no other, offering a perfect blend of natural beauty, historic charm, and cultural richness. From the golden sands of Sunset Beach to the majestic peaks of Mountain Haven, every corner of Wonderland promises a unique and unforgettable experience.</p>
-        <div class="image-container">
-            <img src="https://cdn.mos.cms.futurecdn.net/faW95ok86W7MUhwJFTJkx9-1200-80.jpg.webp" alt="Sunset Beach">
-            <img src="https://cdn.mos.cms.futurecdn.net/faW95ok86W7MUhwJFTJkx9-1200-80.jpg.webp" alt="Mountain Haven">
+        <h2>Mount Sahand</h2>
+        <p>One of the most important tourist attractions of this mountain is its rich and beautiful vegetation, which not only attracts tourists but also helps preserve nature. In the protected area of Sahand, 156 plant species have been identified, 26 of which are endemic.</p>
+        <p>Its semi-active volcano is another advantage of this area.</p>
+        <p>Despite its significant height, the Sahand mountain range is always covered with abundant pastures and meadows, giving the impression that the mountain is dressed in green with colorful flowers. For this reason, this mountain is known as the "Bride of the Mountains of Iran."</p>
+        <p>Another beautiful attraction of this mountain is the numerous large springs (11 springs) that flow into Lake Urmia and the Caspian Sea in Iran.</p>
+        <p>One of the notable features of Sahand is the Sahand Ski Resort.</p>
+        <div class="image-placeholder">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/bf/02/2f/sahand-is-nested-in-the.jpg?w=900&h=500&s=1" alt="Mount Sahand">
         </div>
-        <p id="paragraph2">Immerse yourself in the tranquil atmosphere of Sunset Beach, where the gentle sound of waves and the breathtaking view of the setting sun create a haven of peace. For those who crave the thrill of exploration, the trails of Mountain Haven lead to awe-inspiring vistas.</p>
+        <p>In this region, snow can accumulate up to 4 meters deep, creating the perfect conditions for an exciting skiing experience. The resort has two lifts, each 1200 meters long, which take visitors to the mountain peak. The snow in this area remains for nearly six months.</p>
+        <div class="divider"></div>
+        
+        <h2>Maharloo Lake</h2>
+        <p>One of the most significant tourist attractions of this region is its stunning pink color, which is caused by algae and natural substances.</p>
+        <p>Given the proximity of Maharloo Lake to Shiraz, tourists have the opportunity to enjoy both nature and the ancient and artistic attractions of the lake.</p>
+        <p>This lake's tranquil environment allows tourists to relax and enjoy the region.</p>
+        <div class="image-placeholder">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYzHYLtoi5elER2L55VReEMPlLw3nbA8sCEg&s" alt="Maharloo Lake">
+        </div>
+        <p>Another advantage of this lake is its exceptional ecosystem, which provides a habitat for animals such as the monitor lizard, tortoises, foxes, hyenas, and various amphibians.</p>
+        <div class="divider"></div>
+        
+        <h2>Hara Forest</h2>
+        <p>Let's begin with the vastness of this forest region, which is so expansive that it is known far and wide. Anyone feeling weary from one part of the area can easily visit other regions.</p>
+        <p>One of the unique attractions of this forest is the delicate flowers with tiny petals that grow only in this region and are rare worldwide. One of the legends associated with this forest is the creation of the Hara tree, which is said to be born from human tears, adding to the forest's allure.</p>
+        <p>The plants and trees in this forest remain evergreen throughout the year, offering visitors a chance to enjoy its lush vegetation any time they visit.</p>
+        <div class="image-placeholder">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-tAgantaXSMeGwV89AYEdS5j-PqlFb6aQQg&s" alt="Hara Forest">
+        </div>
+        <p>At the coastal dock of this area, in addition to viewing the rivers, visitors can take a ride on motorboats, which is one of the area's highlights. For those who prefer not to go boating, fishing is also an option, as the fish in this region are among the best in the world and Iran.</p>
+        <div class="divider"></div>
+
+        <h2>Kavir Shahdad</h2>
+        <p>One of the most famous natural attractions of Iran globally is the Kaluts in the Shahdad Desert. Kaluts are U-shaped prominences created by wind erosion. The Kaluts in this desert can be very large, with the tallest reaching 138 meters!</p>
+        <p>Shahdad Desert, with its unique Kaluts, has become one of the most astonishing desert regions in the world.</p>
+        <p>The hottest temperature ever recorded in the world was in the Gandom Beryan area of this desert, where temperatures exceeded 70°C!</p>
+        <div class="image-placeholder">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/86/bf/a0/shahdad-kalouts.jpg?w=1200&h=-1&s=1" alt="Kavir Shahdad">
+        </div>
+        <p>This desert is a great destination for a trip. It is near Kerman, and tourists can also visit other attractions in Kerman, such as the Bam Citadel and the Shahzadeh Mahan Garden.</p>
+        <div class="divider"></div>
+
+        <h2>Persian Gulf</h2>
+        <p>One of the key advantages of the Persian Gulf is its oil and gas resources, making it a significant economic source for any country. Iran generates substantial income from selling oil and gas in the Persian Gulf.</p>
+        <p>Another reason for the superiority of the Persian Gulf over other seas is its immense size, ranking third in the world with a length of 250 kilometers and a width of 90 kilometers.</p>
+        <p>The Persian Gulf's depth is another advantage, with its deepest point reaching 90 meters.</p>
+        <div class="image-placeholder">
+            <img src="https://visitiran.ir/uploaded/1738/de2e_168300955841980.jpg" alt="Persian Gulf">
+        </div>
+        <p>The gulf also offers great tourist attractions such as diving.</p>
+        <div class="divider"></div>
+
+        <h2>Karun River</h2>
+        <p>The Karun River holds special importance among Iranians, being the longest river in Iran with a length of 950 kilometers. It is also one of the deepest rivers in the country, with its deepest point reaching 21 meters.</p>
+        <div class="image-placeholder">
+            <img src="https://visitiran.ir/visitPic/de2e/public/2019-09/%D8%B1%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D9%88%D9%86.jpg" alt="Karun River">
+        </div>
+        <p>Karun also has areas suitable for shipping, making it one of the most vital rivers in the country.</p>
+
     </section>
+
     <footer>
-        <p id="copyright">© 2025 Explore Wonderland. All rights reserved.</p>
+        <p>&copy; 2025 Explore Iran. All rights reserved.</p>
     </footer>
 </body>
 </html>
